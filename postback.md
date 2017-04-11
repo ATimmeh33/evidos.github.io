@@ -74,6 +74,13 @@ As you may have noticed the “pipe” sign ( &#124; ) is used as the delimiter 
       "ScribbleNameFixed": false,
       "Reference": "Client #123",
       "ReturnUrl": "https://signhost.com",
+      "Verifications": [
+        {
+          "Type": "iDIN",
+          "AccountHolderName": "Jane Doe",
+          "AccountHolderDateOfBirth": "1997-3-31"
+        }
+      ],
       "Activities": [
         {
           "Id": "bcba44a9-c201-4494-9920-2c1f7baebcf0",
