@@ -42,6 +42,30 @@ The checksum is generated using the following formula:
 
 As you may have noticed the “pipe” sign ( &#124; ) is used as the delimiter between values. You may need to put the delimiters between single quotes (‘) or double quotes (“) depending on the programming language that you will be using. The value returned by the SHA1 function is a string of 40 characters representing a hexadecimal value. How to use the SHA1 algorithm depends on your development platform. Most languages and frameworks (such as PHP and ASP.NET) have built-in implementations of the SHA1 algorithm. For other languages, such as classic ASP, implementations of the SHA1 algorithm are available online.
 
+### iDIN dictionary values
+
+When a transaction is signed with iDIN verifications the transaction will include iDIN attributes.
+An example of possible values can be seen below:
+
+```
+"Attributes":
+{
+  "urn:nl:bvn:bankid:1.0:consumer.bin": "xxxxx",
+  "urn:nl:bvn:bankid:1.0:bankid.deliveredserviceid": "12345",
+  "urn:nl:bvn:bankid:1.0:consumer.housenosuf": "AB",
+  "urn:nl:bvn:bankid:1.0:consumer.postalcode": "1234AB",
+  "urn:nl:bvn:bankid:1.0:consumer.houseno": "123",
+  "urn:nl:bvn:bankid:1.0:consumer.initials": "JN",
+  "urn:nl:bvn:bankid:1.0:consumer.street": "Straatlaan",
+  "urn:nl:bvn:bankid:1.0:consumer.dateofbirth": "19800124",
+  "urn:nl:bvn:bankid:1.0:consumer.legallastname": "Doe",
+  "urn:nl:bvn:bankid:1.0:consumer.country": "NL",
+  "urn:nl:bvn:bankid:1.0:consumer.city": "AMSTERDAM",
+  "urn:nl:bvn:bankid:1.0:consumer.preferredlastname": "Doe",
+  "urn:nl:bvn:bankid:1.0:consumer.addressextra": "#"
+}
+```
+
 ### Request body formats
 
 ```
@@ -74,13 +98,6 @@ As you may have noticed the “pipe” sign ( &#124; ) is used as the delimiter 
       "ScribbleNameFixed": false,
       "Reference": "Client #123",
       "ReturnUrl": "https://signhost.com",
-      "Verifications": [
-        {
-          "Type": "iDIN",
-          "AccountHolderName": "Jane Doe",
-          "AccountHolderDateOfBirth": "1997-3-31"
-        }
-      ],
       "Activities": [
         {
           "Id": "bcba44a9-c201-4494-9920-2c1f7baebcf0",
